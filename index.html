@@ -285,8 +285,8 @@ footer{
   <div class="stat-item"><div class="stat-num">99.7%</div><div class="stat-lbl">Threat detection</div></div>
   <div class="stat-item"><div class="stat-num">50K+</div><div class="stat-lbl">Domains blocked</div></div>
   <div class="stat-item"><div class="stat-num">&lt;1%</div><div class="stat-lbl">CPU at idle</div></div>
-  <div class="stat-item"><div class="stat-num">10+</div><div class="stat-lbl">Tools bundled</div></div>
-  <div class="stat-item"><div class="stat-num">3</div><div class="stat-lbl">Platforms</div></div>
+  <div class="stat-item"><div class="stat-num">15+</div><div class="stat-lbl">Tools bundled</div></div>
+  <div class="stat-item"><div class="stat-num">Win</div><div class="stat-lbl">10 &amp; 11 · 64-bit</div></div>
 </div>
 
 <div class="section" id="features">
@@ -297,74 +297,98 @@ footer{
   <div class="features-grid">
     <div class="feat-card">
       <div class="feat-icon">🛡️</div>
-      <div class="feat-name">InfinityGuard Core Engine</div>
-      <div class="feat-desc">Multi-layer signature scanning catches known malware, trojans, and spyware with daily automatic definition updates.</div>
-      <div class="feat-tag">Real-time</div>
+      <div class="feat-name">Multi-Layer Core Engine</div>
+      <div class="feat-desc">Hash check, entropy analysis, YARA pattern matching, and full ClamAV signature scan — four passes on every file. Definitions update automatically every 6 hours.</div>
+      <div class="feat-tag">4-pass scan</div>
     </div>
     <div class="feat-card">
       <div class="feat-icon">🤖</div>
-      <div class="feat-name">AI Defense</div>
-      <div class="feat-desc">Local machine learning model detects ransomware behavior before a single file is encrypted — no cloud, no latency.</div>
+      <div class="feat-name">AI Defense Stack</div>
+      <div class="feat-desc">Four on-device AI layers work together: a trained ransomware classifier, behavioral momentum analysis, anomaly detection, and a predictive engine — all running locally with no cloud dependency.</div>
       <div class="feat-tag">On-device AI</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🪤</div>
+      <div class="feat-name">Ransomware Honeypot</div>
+      <div class="feat-desc">Canary files are placed silently in key directories. The moment any process touches them, InfinityGuard identifies and kills the ransomware before it can encrypt your real files.</div>
+      <div class="feat-tag">Instant tripwire</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">💾</div>
+      <div class="feat-name">Shadow Copy Recovery</div>
+      <div class="feat-desc">Automatic Volume Shadow Copies taken every 6 hours. If ransomware gets past every other layer, your files can be rolled back — and InfinityGuard protects the snapshots from deletion.</div>
+      <div class="feat-tag">Auto-backup</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">📜</div>
+      <div class="feat-name">Script Shield</div>
+      <div class="feat-desc">Intercepts PowerShell, VBScript, JScript, and Office macros via Windows AMSI before they execute. Catches fileless malware and encoded attack scripts that bypass traditional scanners.</div>
+      <div class="feat-tag">Pre-execution</div>
     </div>
     <div class="feat-card">
       <div class="feat-icon">🌐</div>
       <div class="feat-name">Built-in VPN</div>
-      <div class="feat-desc">WireGuard-powered encrypted tunnel. Import any .conf file and connect in one click from inside InfinityGuard.</div>
+      <div class="feat-desc">WireGuard-powered encrypted tunnel built directly into the dashboard. Import any .conf file and connect in one click — no separate app needed.</div>
       <div class="feat-tag">WireGuard</div>
     </div>
     <div class="feat-card">
       <div class="feat-icon">🚫</div>
       <div class="feat-name">DNS Shield</div>
-      <div class="feat-desc">Blocks 75,000+ malicious domains at the network level before they even load. Malware, trackers, and phishing sites.</div>
+      <div class="feat-desc">Blocks 50,000+ malicious domains at the OS level before they load. Malware C2 servers, phishing sites, and trackers are blocked before your browser even makes a connection.</div>
       <div class="feat-tag">Network-level</div>
     </div>
     <div class="feat-card">
       <div class="feat-icon">🔑</div>
-      <div class="feat-name">Password Manager</div>
-      <div class="feat-desc">KeePassXC integrated directly into InfinityGuard. Local vault — your passwords never touch a cloud server.</div>
-      <div class="feat-tag">Local vault</div>
+      <div class="feat-name">Encrypted Password Vault</div>
+      <div class="feat-desc">Built-in AES-256 encrypted vault with 480,000-round PBKDF2 key derivation. Your credentials never leave your machine. Optional KeePassXC bridge for existing KeePass users.</div>
+      <div class="feat-tag">AES-256</div>
     </div>
     <div class="feat-card">
       <div class="feat-icon">👤</div>
       <div class="feat-name">Identity Protection</div>
-      <div class="feat-desc">Dark web monitoring for your emails, password breach checking, and data broker opt-out guides.</div>
-      <div class="feat-tag">Dark web scan</div>
+      <div class="feat-desc">Email breach monitoring via HaveIBeenPwned, k-anonymity password checks, and data broker opt-out guides for major people-search sites. Your data stays private during every check.</div>
+      <div class="feat-tag">Breach check</div>
     </div>
     <div class="feat-card">
       <div class="feat-icon">📡</div>
       <div class="feat-name">Network Monitor</div>
-      <div class="feat-desc">See every active connection on your device. Flags suspicious ports and known malicious IP addresses instantly.</div>
+      <div class="feat-desc">Live view of every active connection. Flags suspicious ports, known malicious IPs, DNS tunneling attempts, and unusual beaconing patterns from running processes.</div>
       <div class="feat-tag">Live view</div>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon">📶</div>
-      <div class="feat-name">Wi-Fi Security Scanner</div>
-      <div class="feat-desc">Scans visible networks for weak encryption, open hotspots, and rogue access points. Know before you connect.</div>
-      <div class="feat-tag">Auto-scan</div>
     </div>
     <div class="feat-card">
       <div class="feat-icon">🔌</div>
       <div class="feat-name">USB Auto-Scanner</div>
-      <div class="feat-desc">Every USB drive scanned the moment it's inserted. No manual action required — just plug in and you're protected.</div>
+      <div class="feat-desc">Every USB and removable drive is scanned the moment it's inserted — full pipeline scan, no manual action required. Infected drives are flagged before they can run anything.</div>
       <div class="feat-tag">Instant</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🪟</div>
+      <div class="feat-name">Defender Compatible</div>
+      <div class="feat-desc">Runs as a companion alongside Windows Defender — not a replacement. Both can be active simultaneously. InfinityGuard handles layers Defender doesn't: canary files, DNS shield, VPN, vault.</div>
+      <div class="feat-tag">Companion mode</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">📶</div>
+      <div class="feat-name">Wi-Fi Security Scanner</div>
+      <div class="feat-desc">Scans visible networks for weak encryption, open hotspots, and known rogue access point patterns. Flags risks before you connect.</div>
+      <div class="feat-tag">Auto-scan</div>
     </div>
     <div class="feat-card">
       <div class="feat-icon">🧹</div>
       <div class="feat-name">Privacy Tools</div>
-      <div class="feat-desc">Disk cleaner, DoD-grade secure file deletion, free space wiping, and browser cache cleaning in one panel.</div>
-      <div class="feat-tag">3-pass wipe</div>
+      <div class="feat-desc">DoD 3-pass secure file deletion, free space wiping, browser cache clearing (Chrome, Edge, Firefox), and Windows temp file cleanup — all in one panel.</div>
+      <div class="feat-tag">DoD wipe</div>
     </div>
     <div class="feat-card">
       <div class="feat-icon">🚀</div>
       <div class="feat-name">Startup Manager</div>
-      <div class="feat-desc">See and control every program that launches at boot. Risk-rated so you immediately know what's suspicious.</div>
+      <div class="feat-desc">Full visibility into every program that launches at boot — registry keys, scheduled tasks, and startup folders. Risk-scored so you immediately spot what's suspicious.</div>
       <div class="feat-tag">Risk scored</div>
     </div>
     <div class="feat-card">
       <div class="feat-icon">🔧</div>
       <div class="feat-name">System Hardening</div>
-      <div class="feat-desc">One-click security policies: disable AutoRun, close SMBv1, enable DEP, remove RDP attack surface, and more.</div>
+      <div class="feat-desc">One-click hardening policies: disable AutoRun, close SMBv1 (EternalBlue/WannaCry vector), enable DEP, lock down RDP, and more. Each policy explained before you apply it.</div>
       <div class="feat-tag">One-click</div>
     </div>
   </div>
@@ -429,11 +453,12 @@ footer{
         <div class="plan-feature">Password manager (local vault)</div>
         <div class="plan-feature">Privacy tools + disk cleaner</div>
         <div class="plan-feature">Startup manager</div>
+        <div class="plan-feature">Identity breach monitoring</div>
         <div class="plan-feature dim">Real-time protection</div>
         <div class="plan-feature dim">AI ransomware defense</div>
         <div class="plan-feature dim">Auto-updating definitions</div>
         <div class="plan-feature dim">VPN + DNS Shield</div>
-        <div class="plan-feature dim">Identity monitoring</div>
+        <div class="plan-feature dim">Script Shield + honeypot</div>
         <a href="https://github.com/contactinfinitysolutionsllc-ops/infinityguard-releases/releases/download/v1.1.5/InfinityGuard-Free-Setup-1.1.5.exe" class="plan-cta plan-cta-g" style="display:block;text-align:center;text-decoration:none;line-height:2.2">⬇ Download Free</a>
       </div>
 
@@ -448,8 +473,10 @@ footer{
         <div class="plan-feature">AI ransomware detection</div>
         <div class="plan-feature">Auto-updating definitions</div>
         <div class="plan-feature">VPN + DNS Shield</div>
-        <div class="plan-feature">Identity + breach monitoring</div>
         <div class="plan-feature">Network monitor + firewall</div>
+        <div class="plan-feature">Script Shield (PowerShell/macro)</div>
+        <div class="plan-feature">Ransomware honeypot (CanaryGuard)</div>
+        <div class="plan-feature">Shadow copy recovery (6h backups)</div>
         <div class="plan-feature">All future features included</div>
         <a href="https://square.link/u/C1XYP8VZ" class="plan-cta plan-cta-p" style="display:block;text-align:center;text-decoration:none;line-height:2.2">Get Lifetime Access — $59.99</a>
       </div>
