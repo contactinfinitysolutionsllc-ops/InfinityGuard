@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You — InfinityGuard</title>
+<meta name="description" content="Thank you for purchasing InfinityGuard. Activate your license and get protected now.">
+<link rel="icon" type="image/x-icon" href="assets/ig_icon.ico">
+<link rel="apple-touch-icon" href="assets/ig_icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#04060d;--bg2:#080c18;--bg3:#0c1020;--bg4:#101525;
+  --border:rgba(255,255,255,.06);--border2:rgba(255,255,255,.12);
+  --text:#dce4f0;--muted:#5a6480;--muted2:#8892aa;
+  --accent:#00c8f0;--accent2:#40d8ff;--accent3:#006880;
+  --green:#34d399;--gold:#f0c040;
+  --silver:#a8c0d8;--silver2:#c8dff0;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.6;min-height:100vh;display:flex;flex-direction:column}
+
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:
+    linear-gradient(rgba(0,200,240,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,200,240,.025) 1px,transparent 1px);
+  background-size:60px 60px;
+  mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,black 0%,transparent 70%);
+}
+
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.9rem 3rem;
+  background:rgba(4,6,13,.85);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+}
+.nav-logo{display:flex;align-items:center;gap:.7rem;text-decoration:none}
+.nav-logo-text{font-family:'Rajdhani',sans-serif;font-size:1.15rem;font-weight:700;letter-spacing:.02em;color:var(--text)}
+.nav-logo-text span{color:var(--accent)}
+
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:7rem 1.5rem 4rem;position:relative;z-index:1}
+
+.card{
+  max-width:620px;width:100%;
+  background:var(--bg2);
+  border:1px solid var(--border2);
+  border-radius:16px;
+  padding:3rem 2.5rem;
+  text-align:center;
+}
+
+.check-ring{
+  width:72px;height:72px;
+  border-radius:50%;
+  background:rgba(52,211,153,.1);
+  border:2px solid rgba(52,211,153,.4);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 1.6rem;
+  font-size:2rem;
+}
+
+.card-eyebrow{
+  font-family:'Rajdhani',sans-serif;
+  font-size:.65rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--green);margin-bottom:.6rem;
+}
+
+.card-title{
+  font-family:'Rajdhani',sans-serif;
+  font-size:2rem;font-weight:700;color:#fff;
+  margin-bottom:.5rem;line-height:1.1;
+}
+
+.card-sub{
+  font-size:.9rem;color:var(--muted2);line-height:1.7;
+  margin-bottom:2rem;font-weight:300;
+}
+
+.divider{height:1px;background:var(--border);margin:1.8rem 0}
+
+.steps-title{
+  font-family:'Rajdhani',sans-serif;
+  font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:1.2rem;
+}
+
+.steps{display:flex;flex-direction:column;gap:.9rem;text-align:left}
+.step{display:flex;gap:1rem;align-items:flex-start}
+.step-num{
+  flex-shrink:0;
+  width:26px;height:26px;
+  border-radius:50%;
+  background:rgba(0,200,240,.1);
+  border:1px solid rgba(0,200,240,.3);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Rajdhani',sans-serif;font-size:.8rem;font-weight:700;color:var(--accent);
+  margin-top:1px;
+}
+.step-body{font-size:.88rem;color:var(--muted2);line-height:1.6}
+.step-body strong{color:var(--text);font-weight:500}
+.step-body code{
+  background:var(--bg3);border:1px solid var(--border2);
+  padding:.1rem .4rem;border-radius:4px;
+  font-family:monospace;font-size:.82rem;color:var(--accent2);
+  letter-spacing:.04em;
+}
+
+.btn-download{
+  display:inline-block;margin-top:2rem;
+  padding:.7rem 1.8rem;
+  background:var(--accent);color:#021018;
+  font-family:'Rajdhani',sans-serif;font-size:.95rem;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;text-decoration:none;
+  border-radius:6px;border:none;cursor:pointer;transition:background .2s;
+}
+.btn-download:hover{background:var(--accent2)}
+
+.note-box{
+  margin-top:1.8rem;
+  background:rgba(0,200,240,.04);
+  border:1px solid rgba(0,200,240,.1);
+  border-radius:8px;
+  padding:1rem 1.2rem;
+  font-size:.82rem;color:var(--muted2);line-height:1.7;
+  text-align:left;
+}
+.note-box a{color:var(--accent);text-decoration:none}
+.note-box a:hover{text-decoration:underline}
+
+footer{
+  text-align:center;padding:1.5rem;
+  font-size:.75rem;color:var(--muted);
+  border-top:1px solid var(--border);
+  position:relative;z-index:1;
+}
+footer a{color:var(--muted2);text-decoration:none}
+footer a:hover{color:var(--text)}
+
+@media(max-width:600px){
+  nav{padding:.9rem 1.2rem}
+  .card{padding:2rem 1.2rem}
+  .card-title{font-size:1.6rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="InfinityGuard.html" class="nav-logo">
+    <img src="assets/ig_icon.png" width="28" height="28" alt="InfinityGuard" style="border-radius:6px" onerror="this.style.display='none'">
+    <span class="nav-logo-text">Infinity<span>Guard</span></span>
+  </a>
+  <a href="InfinityGuard.html" style="font-size:.8rem;color:var(--muted2);text-decoration:none;letter-spacing:.04em">← Back to site</a>
+</nav>
+
+<main>
+  <div class="card">
+    <div class="check-ring">✓</div>
+    <div class="card-eyebrow">Purchase confirmed</div>
+    <div class="card-title">You're protected.</div>
+    <div class="card-sub">
+      Thank you for supporting InfinityGuard. Your license key was sent to your email — check your inbox (and spam folder just in case). Activate below in three steps.
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="steps-title">How to activate your license</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <strong>Open InfinityGuard</strong> — if you haven't installed it yet, download it below.
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          Go to <strong>Settings</strong> in the left sidebar, then scroll to the <strong>License</strong> section.
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          Paste your license key from the purchase email and click <strong>Activate</strong>. Full protection turns on immediately — no restart needed.
+        </div>
+      </div>
+    </div>
+
+    <a href="https://github.com/contactinfinitysolutionsllc-ops/infinityguard-releases/releases/download/v1.1.6/InfinityGuard-Setup-1.1.6.exe" class="btn-download">⬇ Download InfinityGuard — Windows</a>
+
+    <div class="note-box">
+      <strong style="color:var(--text)">Can't find your key?</strong><br>
+      Check the email address you used at checkout. If it's still missing, email us at
+      <a href="mailto:support@infinityhub.dev">support@infinityhub.dev</a> with your order confirmation and we'll get it sorted fast.<br><br>
+      <strong style="color:var(--text)">Your license never expires</strong> — it's stored locally and survives reinstalls. If you move to a new PC, just re-enter your key in Settings → License.
+    </div>
+  </div>
+</main>
+
+<footer>
+  &copy; 2025 Infinity Solutions LLC &nbsp;·&nbsp;
+  <a href="InfinityGuard.html">InfinityGuard</a> &nbsp;·&nbsp;
+  <a href="https://infinityhub.dev">InfinityHub</a> &nbsp;·&nbsp;
+  <a href="mailto:support@infinityhub.dev">support@infinityhub.dev</a>
+</footer>
+
+</body>
+</html>
