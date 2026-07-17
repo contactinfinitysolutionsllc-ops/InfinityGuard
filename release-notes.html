@@ -194,6 +194,133 @@ footer{
   <h1 class="page-title">What's New</h1>
   <p class="page-sub">Release history for InfinityGuard. Every version, every fix, every improvement — documented here.</p>
 
+  <!-- ── v1.2.0 ── -->
+  <div class="release">
+    <div class="release-header">
+      <div>
+        <div class="release-version">v1.2.0</div>
+        <div class="release-meta">
+          <div class="release-date">July 17, 2026</div>
+          <div class="release-badge latest">Latest Release</div>
+        </div>
+      </div>
+      <a href="https://github.com/contactinfinitysolutionsllc-ops/infinityguard-releases/releases/download/v1.2.0/InfinityGuard_Setup_1.2.0.exe" class="release-dl">⬇ Download</a>
+    </div>
+
+    <!-- New Features -->
+    <div class="change-group">
+      <div class="change-group-label">
+        <div class="group-dot security"></div>
+        <span class="label-security">New Features</span>
+      </div>
+      <ul class="change-list">
+        <li class="change-item security">
+          <strong>Windows Phone-Home &amp; Copilot Audit — 40-point privacy check with Auto-Enforce.</strong>
+          Scans every way Windows phones home without consent: telemetry services, Copilot reinstall vectors, MAPS cloud reporting, MDM enrollment stubs, clipboard cloud sync, WaasMedic self-healer, and more. Scores 0–100. One-click fixes. Auto-Enforce re-blocks anything Windows reverts on the next restart or update.
+        </li>
+        <li class="change-item security">
+          <strong>IG Cleaner — deep system cleanup with VSS awareness and Ads Killer.</strong>
+          Reclaims storage silently eaten by Volume Shadow Copies, Windows Update caches, WinSxS, and Delivery Optimization. Ads Killer terminates Microsoft advertising delivery processes at runtime. Includes telemetry process scrubber and junk file sweeper. Available as a panel inside IG and as a standalone tool.
+        </li>
+        <li class="change-item extension">
+          <strong>Browser Extension — tracker blocking, consent auto-reject, and Gmail shield.</strong>
+          Companion extension for Chrome and Edge. Blocks trackers and ads via declarativeNetRequest rules, automatically rejects cookie consent banners, shields Gmail from tracking pixels, and protects against browser fingerprinting. No separate account or config needed — integrates with the IG dashboard.
+        </li>
+      </ul>
+    </div>
+
+    <!-- Security & Detection -->
+    <div class="change-group">
+      <div class="change-group-label">
+        <div class="group-dot security"></div>
+        <span class="label-security">Security &amp; Detection</span>
+      </div>
+      <ul class="change-list">
+        <li class="change-item security">
+          <strong>Defender unclassified behavioral alerts no longer inflate the threat count.</strong>
+          Detections with <code>category=Invalid</code> / <code>severity=Unknown</code> — Defender's signature for AMSI heuristic noise with no actual verdict — are now routed to the activity log as informational entries instead of being counted as threats. These were causing phantom HIGH alerts with no actionable information.
+        </li>
+        <li class="change-item security">
+          <strong>Per-user service instances suppressed from persistence alerts.</strong>
+          Windows creates runtime service instances like <code>WpnUserService_10aafb</code> on every login. These were being flagged as HIGH persistence detections and counted toward the threat total on every boot. IG now recognizes the <code>ServiceName_XXXXXXXX</code> pattern and suppresses these as benign.
+        </li>
+        <li class="change-item security">
+          <strong>Process Lineage Scorer now starts correctly.</strong>
+          The reference database (<code>process_lineage_db.json</code>) was saved with a UTF-8 BOM by the previous build. Python's <code>encoding="utf-8"</code> cannot parse BOM-prefixed files, causing the scorer to silently report offline on every startup. Fixed by switching to <code>utf-8-sig</code>.
+        </li>
+        <li class="change-item fix">
+          <strong>Script Shield: MEDIUM script detections now route to the threat log as LOW</strong> with context instead of being surfaced as active threats. Reduces alert fatigue from ambiguous PowerShell patterns that have no confirmed malicious behavior.
+        </li>
+        <li class="change-item fix">
+          <strong>Defender quarantine badge count is now accurate.</strong>
+          The badge was counting all quarantine entries including previously cleared items instead of only active ones.
+        </li>
+      </ul>
+    </div>
+
+    <!-- Privacy & Windows Hardening -->
+    <div class="change-group">
+      <div class="change-group-label">
+        <div class="group-dot dashboard"></div>
+        <span class="label-dashboard">Privacy &amp; Windows Hardening</span>
+      </div>
+      <ul class="change-list">
+        <li class="change-item dashboard">
+          <strong>Applied service disables now persist across reboots and Windows Updates.</strong>
+          When you fix DiagTrack, dmwappushservice, PcaSvc, or any other telemetry service, IG saves the preference to <code>audit_applied_fixes.json</code> and re-applies the disable automatically on every startup — no need to click Fix again after every Windows Update.
+        </li>
+        <li class="change-item dashboard">
+          <strong>DiagTrack and dmwappushservice fixes no longer fail on Windows 11.</strong>
+          SCM ACLs on these services reject <code>Set-Service</code> even as SYSTEM. The disable now uses a 3-layer fallback: PowerShell → <code>sc.exe config</code> → direct registry write (<code>Start=4</code>), ensuring the fix always lands.
+        </li>
+        <li class="change-item dashboard">
+          <strong>PcaSvc (Program Compatibility) now stays disabled after restart.</strong>
+          Service start type alone is not enough — TriggerInfo registry entries restart the service on system events regardless of disabled state, and WaasMedic resets the start type on updates. Fix now uses Group Policy keys + start type disable + TriggerInfo subkey removal, all three together.
+        </li>
+        <li class="change-item dashboard">
+          <strong>LSASS PPL protection now applies correctly.</strong>
+          The previous fix wrote <code>RunAsPPL</code> as <code>REG_SZ "2"</code> — a string type Windows silently ignores for this key. Fixed to write <code>REG_DWORD 2</code>, which Windows actually honors on next boot.
+        </li>
+        <li class="change-item fix">
+          <strong>Privacy Audit: WaasMedic, Clipboard Cloud Sync, and MDM Enrollment checks corrected.</strong>
+          WaasMedic check used a null-conditional operator only available in PowerShell 7+ — always returned MEDIUM on standard Windows PowerShell 5.1. Clipboard check treated a missing registry key as UNKNOWN (Windows deletes the key when the setting is disabled in Settings — absence means off). MDM check now correctly identifies inert OOBE GUID stubs with no active ProviderID as safe.
+        </li>
+      </ul>
+    </div>
+
+    <!-- Dashboard & UI -->
+    <div class="change-group">
+      <div class="change-group-label">
+        <div class="group-dot dashboard"></div>
+        <span class="label-dashboard">Dashboard &amp; UI</span>
+      </div>
+      <ul class="change-list">
+        <li class="change-item dashboard">
+          <strong>System Tools cards no longer stretch into squares.</strong>
+          The feature grid used CSS <code>align-items: stretch</code> (default), causing all cards in a row to match the tallest card's height. Fixed with <code>align-items: start</code> and <code>minmax(0, 1fr)</code> columns — each card is now its natural height.
+        </li>
+        <li class="change-item dashboard">
+          <strong>File Shredder drag-and-drop now accepts folders.</strong>
+          Electron's <code>dataTransfer.items[i].getAsFile()</code> returns <code>null</code> for directories. The drop handler now reads from <code>dataTransfer.files</code> instead, which Electron patches to include directories with full paths.
+        </li>
+      </ul>
+    </div>
+
+    <!-- Installer -->
+    <div class="change-group">
+      <div class="change-group-label">
+        <div class="group-dot installer"></div>
+        <span class="label-installer">Installer</span>
+      </div>
+      <ul class="change-list">
+        <li class="change-item installer">
+          <strong>Build script now correctly bundles the process lineage database.</strong>
+          <code>process_lineage_db.json</code> lives in ProgramData after first install, not in Program Files. The build sync step was skipping it, causing Inno Setup to abort. The build now explicitly pulls the file from ProgramData before packaging.
+        </li>
+      </ul>
+    </div>
+  </div>
+
   <!-- ── v1.1.9 ── -->
   <div class="release">
     <div class="release-header">
@@ -201,10 +328,10 @@ footer{
         <div class="release-version">v1.1.9</div>
         <div class="release-meta">
           <div class="release-date">July 10, 2026</div>
-          <div class="release-badge latest">Latest Release</div>
+          <div class="release-badge">Release</div>
         </div>
       </div>
-      <a href="https://github.com/contactinfinitysolutionsllc-ops/infinityguard-releases/releases/download/v1.1.9/InfinityGuard_Setup_1.1.9.exe" class="release-dl">⬇ Download</a>
+      <a href="https://github.com/contactinfinitysolutionsllc-ops/infinityguard-releases/releases/download/v1.1.9/InfinityGuard_Setup_1.1.9.exe" class="release-dl" style="background:var(--bg3);color:var(--muted2);border:1px solid var(--border2)">⬇ v1.1.9</a>
     </div>
 
     <!-- Security & Detection -->
