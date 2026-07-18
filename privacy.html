@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy & Terms — InfinityGuard</title>
+<meta name="description" content="InfinityGuard Privacy Policy and Terms of Service. We collect no data. Everything runs locally on your device.">
+<link rel="icon" type="image/x-icon" href="assets/ig_icon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#04060d;--bg2:#080c18;--bg3:#0c1020;--bg4:#101525;
+  --border:rgba(255,255,255,.06);--border2:rgba(255,255,255,.12);
+  --text:#dce4f0;--muted:#5a6480;--muted2:#8892aa;
+  --accent:#00c8f0;--accent2:#40d8ff;--accent3:#006880;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:
+    linear-gradient(rgba(0,200,240,.018) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,200,240,.018) 1px,transparent 1px);
+  background-size:60px 60px;
+  mask-image:radial-gradient(ellipse 80% 50% at 50% 0%,black 0%,transparent 70%);
+}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.9rem 3rem;
+  background:rgba(4,6,13,.88);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+}
+.nav-logo{display:flex;align-items:center;gap:.6rem;text-decoration:none}
+.nav-logo-text{font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:700;letter-spacing:.02em;color:var(--text)}
+.nav-logo-text span{color:var(--accent)}
+.nav-back{font-size:.8rem;color:var(--muted2);text-decoration:none;letter-spacing:.04em;text-transform:uppercase;transition:color .2s}
+.nav-back:hover{color:var(--text)}
+
+/* ── LAYOUT ── */
+.page-wrap{
+  max-width:760px;margin:0 auto;padding:7rem 2rem 5rem;
+  position:relative;z-index:1;
+}
+
+/* ── TAB NAV ── */
+.tab-bar{
+  display:flex;gap:4px;margin-bottom:3rem;
+  background:var(--bg3);border:1px solid var(--border);
+  border-radius:10px;padding:4px;
+}
+.tab-btn{
+  flex:1;padding:.55rem 1rem;border:none;border-radius:7px;
+  background:transparent;color:var(--muted2);font-family:'DM Sans',sans-serif;
+  font-size:.82rem;font-weight:500;letter-spacing:.04em;text-transform:uppercase;
+  cursor:pointer;transition:all .18s;
+}
+.tab-btn.active{background:var(--bg4);color:var(--accent);box-shadow:0 1px 8px rgba(0,200,240,.1)}
+.tab-btn:hover:not(.active){color:var(--text)}
+
+.tab-panel{display:none}
+.tab-panel.active{display:block}
+
+/* ── TYPOGRAPHY ── */
+h1{
+  font-family:'Rajdhani',sans-serif;font-size:2.4rem;font-weight:700;
+  letter-spacing:-.02em;color:var(--text);margin-bottom:.5rem;
+}
+.page-meta{font-size:.78rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:2.8rem}
+.page-meta span{color:var(--accent)}
+
+h2{
+  font-family:'Rajdhani',sans-serif;font-size:1.2rem;font-weight:700;
+  letter-spacing:.04em;text-transform:uppercase;color:var(--accent);
+  margin:2.5rem 0 .9rem;padding-bottom:.5rem;
+  border-bottom:1px solid var(--border);
+}
+h2:first-of-type{margin-top:0}
+
+p{color:var(--muted2);margin-bottom:.95rem;font-size:.95rem}
+ul,ol{color:var(--muted2);margin:.4rem 0 .95rem 1.4rem;font-size:.95rem}
+li{margin-bottom:.35rem}
+strong{color:var(--text);font-weight:500}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── CALLOUT ── */
+.callout{
+  background:rgba(0,200,240,.06);border:1px solid rgba(0,200,240,.2);
+  border-left:3px solid var(--accent);border-radius:8px;
+  padding:1rem 1.2rem;margin:1.4rem 0;
+}
+.callout p{margin:0;color:var(--text);font-size:.9rem}
+.callout strong{color:var(--accent)}
+
+.callout-warn{
+  background:rgba(245,158,11,.05);border:1px solid rgba(245,158,11,.18);
+  border-left:3px solid #f59e0b;border-radius:8px;
+  padding:1rem 1.2rem;margin:1.4rem 0;
+}
+.callout-warn p{margin:0;color:rgba(220,228,240,.8);font-size:.88rem}
+
+/* ── PERMISSIONS TABLE ── */
+.perm-table{width:100%;border-collapse:collapse;margin:1rem 0 1.5rem;font-size:.88rem}
+.perm-table th{
+  text-align:left;padding:.55rem .8rem;
+  font-family:'Rajdhani',sans-serif;font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;font-size:.72rem;color:var(--muted);
+  border-bottom:1px solid var(--border2);
+}
+.perm-table td{
+  padding:.5rem .8rem;border-bottom:1px solid var(--border);
+  vertical-align:top;color:var(--muted2);
+}
+.perm-table td:first-child{color:var(--text);font-family:'Rajdhani',sans-serif;font-weight:600;white-space:nowrap}
+.perm-table tr:last-child td{border:none}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--bg2);border-top:1px solid var(--border);
+  padding:2rem 3rem;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:1rem;
+  position:relative;z-index:1;
+}
+.footer-logo{font-family:'Rajdhani',sans-serif;font-size:.9rem;font-weight:700;color:var(--muted);letter-spacing:.04em}
+.footer-logo span{color:var(--accent)}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap}
+.footer-links a{font-size:.72rem;color:var(--muted);text-decoration:none;letter-spacing:.06em;text-transform:uppercase;transition:color .2s}
+.footer-links a:hover{color:var(--muted2)}
+.footer-copy{font-size:.7rem;color:var(--muted);letter-spacing:.04em;width:100%}
+
+@media(max-width:640px){
+  nav{padding:.8rem 1.2rem}
+  .page-wrap{padding:6rem 1.2rem 4rem}
+  h1{font-size:1.9rem}
+  footer{padding:1.5rem 1.2rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-text">Infinity<span>Guard</span></span>
+  </a>
+  <a href="index.html" class="nav-back">← Back to site</a>
+</nav>
+
+<div class="page-wrap">
+
+  <h1>Legal</h1>
+  <p class="page-meta">Infinity Solutions LLC &nbsp;·&nbsp; <span>Last updated: July 2026</span></p>
+
+  <div class="tab-bar">
+    <button class="tab-btn active" onclick="showTab('privacy', this)">Privacy Policy</button>
+    <button class="tab-btn" onclick="showTab('terms', this)">Terms of Service</button>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <!-- PRIVACY POLICY                                            -->
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <div id="tab-privacy" class="tab-panel active">
+
+    <div class="callout">
+      <p><strong>Short version:</strong> InfinityGuard collects no personal data whatsoever. Everything runs locally on your device. No account required. No telemetry. No analytics. No data ever leaves your machine except the threat-feed fetches described below — which carry no identifying information.</p>
+    </div>
+
+    <h2>1. Who We Are</h2>
+    <p>InfinityGuard is a cybersecurity product developed and distributed by <strong>Infinity Solutions LLC</strong>. This Privacy Policy applies to:</p>
+    <ul>
+      <li>The <strong>InfinityGuard browser extension</strong> (available for Chrome and Chromium-based browsers)</li>
+      <li>The <strong>InfinityGuard for Windows</strong> desktop application</li>
+      <li>This website at <strong>infinityguard.infinityhub.dev</strong></li>
+    </ul>
+
+    <h2>2. Data We Collect</h2>
+    <p><strong>We collect no personal data.</strong> InfinityGuard is architected around the principle that your device, your data, and your browsing habits are yours alone. Specifically:</p>
+    <ul>
+      <li>We do not collect your name, email, IP address, or any identifying information</li>
+      <li>We do not track which websites you visit</li>
+      <li>We do not log what threats are detected on your machine</li>
+      <li>We do not use analytics, crash-reporting SDKs, or any third-party tracking on this website or inside the product</li>
+      <li>We do not have access to any files scanned by InfinityGuard for Windows</li>
+      <li>We do not create or maintain any user account linked to you</li>
+    </ul>
+
+    <h2>3. What Stays on Your Device</h2>
+    <p>All of the following are stored locally and never transmitted to us:</p>
+    <ul>
+      <li><strong>Browser extension settings</strong> (toggle states, whitelisted sites, AI provider configuration) — stored in <code>chrome.storage.local</code> on your device only</li>
+      <li><strong>Activity log</strong> — the in-popup threat log is session-only, stored in memory, and cleared when you close the browser</li>
+      <li><strong>AI API keys</strong> — if you configure the Terms/ToS AI analysis feature, your API key is stored exclusively in <code>chrome.storage.local</code> and is never transmitted to Infinity Solutions LLC</li>
+      <li><strong>Cached threat scores</strong> — domain risk scores cached by the extension are session-memory only</li>
+      <li><strong>InfinityGuard for Windows data</strong> — scan results, threat logs, and all detection data are stored locally in the application data directory on your machine</li>
+    </ul>
+
+    <h2>4. Network Requests Made by the Extension</h2>
+    <p>The browser extension makes a small number of outbound network requests. None of them include any personal data or identifiers:</p>
+
+    <h2 style="font-size:.95rem;text-transform:none;letter-spacing:0;color:var(--text);margin-top:1rem;border:none;padding:0">Threat intelligence feeds (every 6 hours)</h2>
+    <ul>
+      <li><strong>URLhaus</strong> (<a href="https://urlhaus.abuse.ch" target="_blank" rel="noopener">urlhaus.abuse.ch</a>) — downloads a public malware domain blocklist. This is a plain HTTPS GET with no cookies, no user identifier, and no request body. Infinity Solutions LLC does not operate this service.</li>
+      <li><strong>OpenPhish</strong> (<a href="https://openphish.com" target="_blank" rel="noopener">openphish.com</a>) — downloads a public phishing URL list. Same conditions as above.</li>
+    </ul>
+    <p>These fetches are equivalent to downloading a public file. Your IP address is visible to those services' servers as with any internet request, but no InfinityGuard-specific data is attached.</p>
+
+    <h2 style="font-size:.95rem;text-transform:none;letter-spacing:0;color:var(--text);margin-top:1rem;border:none;padding:0">Local IG service (InfinityGuard for Windows users only)</h2>
+    <p>When InfinityGuard for Windows is running, the extension communicates with it over <strong>localhost only</strong> (<code>http://127.0.0.1:&lt;port&gt;</code>). This traffic never leaves your machine.</p>
+
+    <h2 style="font-size:.95rem;text-transform:none;letter-spacing:0;color:var(--text);margin-top:1rem;border:none;padding:0">AI analysis (optional, user-configured)</h2>
+    <p>If you enable the AI plain-English explanation feature for Terms of Service pages, the extension sends the text of those pages to the AI provider you configure (e.g., Groq, Google Gemini, or a local model via Ollama/LM Studio). <strong>Infinity Solutions LLC never sees this data</strong> — your request goes directly from your browser to your chosen provider under their privacy policy. We strongly recommend local models for maximum privacy.</p>
+
+    <h2>5. Browser Extension Permissions</h2>
+    <p>The extension requests the following permissions. Each is used only as described:</p>
+    <table class="perm-table">
+      <thead><tr><th>Permission</th><th>Why it's needed</th></tr></thead>
+      <tbody>
+        <tr><td>webNavigation</td><td>Detect navigation events to run threat checks before pages load</td></tr>
+        <tr><td>declarativeNetRequest</td><td>Block trackers, ads, and threat domains without reading your traffic</td></tr>
+        <tr><td>storage</td><td>Save your settings and threat feed data locally</td></tr>
+        <tr><td>tabs</td><td>Show warnings in the correct tab and display the popup</td></tr>
+        <tr><td>scripting</td><td>Inject protection overlays and content analysis scripts</td></tr>
+        <tr><td>notifications</td><td>Optional desktop alerts for threat detections (only if enabled)</td></tr>
+        <tr><td>downloads</td><td>Monitor downloads for malicious file types (optional feature)</td></tr>
+        <tr><td>alarms</td><td>Schedule periodic threat feed refreshes every 6 hours</td></tr>
+        <tr><td>privacy</td><td>Configure WebRTC IP leak protection at the browser level</td></tr>
+        <tr><td>&lt;all_urls&gt;</td><td>Required to run content protection scripts on every page you visit — no page content is transmitted anywhere</td></tr>
+      </tbody>
+    </table>
+
+    <h2>6. This Website</h2>
+    <p>The InfinityGuard website (<strong>infinityguard.infinityhub.dev</strong>) is a static HTML site. We do not run analytics, ad tracking, or any JavaScript that phones home. Standard server access logs may be maintained by the hosting provider for infrastructure purposes; these are not under our control and are not used for marketing or profiling.</p>
+
+    <h2>7. Payment Processing</h2>
+    <p>Lifetime license purchases are processed through <strong>Square</strong>. When you purchase, you interact with Square's payment interface directly. Infinity Solutions LLC receives confirmation that a payment was made but does not receive or store your full card number. Square's privacy policy applies to payment processing. We do not store payment details of any kind.</p>
+
+    <h2>8. Children</h2>
+    <p>InfinityGuard is not directed at children under 13. We do not knowingly collect any data from anyone, including children. Given that we collect no data at all, this is not a meaningful concern in practice.</p>
+
+    <h2>9. Data Retention</h2>
+    <p>Since we collect no data, there is nothing to retain or delete. All data generated by your use of InfinityGuard resides on your device and is under your control. You can clear the extension's storage at any time via your browser's extension settings.</p>
+
+    <h2>10. Your Rights</h2>
+    <p>Because no personal data is collected by Infinity Solutions LLC, standard data subject rights (access, deletion, portability) are automatically satisfied — there is nothing to access, delete, or export from our end. If you have questions or believe data was collected in error, contact us at the address below.</p>
+
+    <h2>11. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy to reflect changes in the product. The "Last updated" date at the top of this page reflects the most recent revision. If material changes are made, we will note them in the product's release notes.</p>
+
+    <h2>12. Contact</h2>
+    <p>Questions about this Privacy Policy:<br>
+    <a href="mailto:privacy@infinityhub.dev">privacy@infinityhub.dev</a><br>
+    Infinity Solutions LLC</p>
+
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <!-- TERMS OF SERVICE                                          -->
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <div id="tab-terms" class="tab-panel">
+
+    <div class="callout">
+      <p><strong>Plain-language summary:</strong> You can use InfinityGuard freely. Don't use it to harm others or break the law. We can't guarantee that every threat will be caught — no security software can. You accept these terms by using the product.</p>
+    </div>
+
+    <h2>1. Acceptance</h2>
+    <p>By installing or using InfinityGuard (the "Software"), including the browser extension and/or the Windows desktop application, you agree to be bound by these Terms of Service ("Terms"). If you do not agree, do not use the Software.</p>
+
+    <h2>2. License</h2>
+    <p>Infinity Solutions LLC grants you a personal, non-exclusive, non-transferable license to install and use the Software on devices you own or control, subject to these Terms.</p>
+    <p><strong>Free tier:</strong> The browser extension is free to use indefinitely with no account and no limitations.</p>
+    <p><strong>Lifetime license:</strong> A one-time payment grants you a permanent license to use InfinityGuard for Windows, including all future updates released under that major version line. This license is for personal or household use only; it is not transferable and may not be resold.</p>
+
+    <h2>3. Permitted Use</h2>
+    <p>You may use the Software for lawful personal security and privacy protection. You may not:</p>
+    <ul>
+      <li>Use the Software to harm, attack, or surveil others without their knowledge and consent</li>
+      <li>Reverse-engineer, decompile, or extract the proprietary AI components of the Software</li>
+      <li>Redistribute or resell the Software or any license to it</li>
+      <li>Use the Software in violation of any applicable law or regulation</li>
+      <li>Misrepresent InfinityGuard as your own product</li>
+    </ul>
+
+    <h2>4. Open Components</h2>
+    <p>InfinityGuard includes or interfaces with open-source components including ClamAV (GPLv2) and others. Those components remain under their respective licenses. The InfinityGuard application code, AI detection engine, and proprietary detection algorithms are not open source and all rights are reserved by Infinity Solutions LLC.</p>
+
+    <h2>5. No Warranty — Security Disclaimer</h2>
+    <div class="callout-warn">
+      <p><strong>Security software cannot guarantee complete protection.</strong> Threat actors continuously develop new techniques. No antivirus, browser extension, or security suite — including InfinityGuard — can detect or block every threat. InfinityGuard is a meaningful layer of defense, not an absolute guarantee of safety.</p>
+    </div>
+    <p>THE SOFTWARE IS PROVIDED "AS IS," WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT. INFINITY SOLUTIONS LLC DOES NOT WARRANT THAT THE SOFTWARE WILL DETECT ALL THREATS, BE ERROR-FREE, OR OPERATE WITHOUT INTERRUPTION.</p>
+
+    <h2>6. Limitation of Liability</h2>
+    <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, INFINITY SOLUTIONS LLC AND ITS OWNERS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF OR INABILITY TO USE THE SOFTWARE, INCLUDING BUT NOT LIMITED TO DAMAGES RESULTING FROM A SECURITY BREACH, MALWARE INFECTION, DATA LOSS, OR UNAUTHORIZED ACCESS TO YOUR SYSTEMS, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+    <p>IN NO EVENT SHALL OUR TOTAL LIABILITY TO YOU EXCEED THE AMOUNT YOU PAID FOR THE SOFTWARE IN THE TWELVE MONTHS PRECEDING THE CLAIM.</p>
+
+    <h2>7. Third-Party Services</h2>
+    <p>InfinityGuard may interface with third-party services at your direction (e.g., AI providers you configure, threat intelligence feeds). We are not responsible for the availability, accuracy, or privacy practices of those services. Your use of third-party services is governed by their own terms and policies.</p>
+
+    <h2>8. Updates and Changes</h2>
+    <p>We may update the Software at any time to add features, fix bugs, or address security vulnerabilities. We may update these Terms with notice provided via the product's release notes or this website. Continued use of the Software after an update to these Terms constitutes acceptance of the revised Terms.</p>
+
+    <h2>9. Termination</h2>
+    <p>You may stop using the Software at any time by uninstalling it. We reserve the right to revoke a license if these Terms are violated. Sections 5, 6, and 10 survive termination.</p>
+
+    <h2>10. Governing Law</h2>
+    <p>These Terms are governed by the laws of the State of Florida, United States, without regard to conflict-of-law principles. Any disputes shall be resolved in the state or federal courts located in Florida, and you consent to personal jurisdiction there.</p>
+
+    <h2>11. Entire Agreement</h2>
+    <p>These Terms and the Privacy Policy constitute the entire agreement between you and Infinity Solutions LLC regarding the Software and supersede any prior agreements.</p>
+
+    <h2>12. Contact</h2>
+    <p>Legal inquiries:<br>
+    <a href="mailto:legal@infinityhub.dev">legal@infinityhub.dev</a><br>
+    Infinity Solutions LLC</p>
+
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-logo">Infinity<span>Guard</span> — by Infinity Solutions LLC</div>
+  <div class="footer-links">
+    <a href="https://infinityhub.dev">Hub</a>
+    <a href="mailto:support@infinityhub.dev">Support</a>
+    <a href="index.html">Home</a>
+    <a href="release-notes.html">What's New</a>
+    <a href="privacy.html">Privacy &amp; Terms</a>
+  </div>
+  <div class="footer-copy">© 2026 Infinity Solutions LLC · All Rights Reserved</div>
+</footer>
+
+<script>
+function showTab(name, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+
+</body>
+</html>
