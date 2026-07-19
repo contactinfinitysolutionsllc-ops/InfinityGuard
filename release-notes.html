@@ -194,6 +194,102 @@ footer{
   <h1 class="page-title">What's New</h1>
   <p class="page-sub">Release history for InfinityGuard. Every version, every fix, every improvement — documented here.</p>
 
+  <!-- ── Extension v1.5.0 ── -->
+  <div class="release">
+    <div class="release-header">
+      <div>
+        <div class="release-version">Extension v1.5.0</div>
+        <div class="release-meta">
+          <div class="release-date">July 18, 2026</div>
+          <div class="release-badge latest">Latest · Browser Extension</div>
+        </div>
+      </div>
+      <a href="https://github.com/contactinfinitysolutionsllc-ops/InfinityGuard/releases/download/v1.5.0/InfinityGuard-Extension-v1.5.0.zip" class="release-dl">⬇ Download ZIP</a>
+    </div>
+
+    <!-- Standalone Release -->
+    <div class="change-group">
+      <div class="change-group-label">
+        <div class="group-dot extension"></div>
+        <span class="label-extension">First Standalone Release</span>
+      </div>
+      <ul class="change-list">
+        <li class="change-item extension">
+          <strong>InfinityGuard Browser Extension is now available as a standalone download — no Windows app required.</strong>
+          All browser protections run independently. Includes a one-click PowerShell installer that registers the extension in Chrome, Edge, and Brave automatically. Double-click <code>Install InfinityGuard Extension.cmd</code>, done.
+          <span class="note">Manual load-unpacked instructions included as a fallback for any browser not handled by the script.</span>
+        </li>
+        <li class="change-item extension">
+          <strong>Stable extension ID across all installs.</strong>
+          The extension now uses a cryptographic key binding in the manifest, giving it the same ID (<code>obooecnobkjgledlinbopnjlcdoojofe</code>) regardless of where it's installed or loaded from. Settings, whitelist entries, and per-site preferences survive reinstalls and path changes.
+        </li>
+        <li class="change-item extension">
+          <strong>Standalone mode popup — works gracefully when IG for Windows isn't installed.</strong>
+          The popup previously showed a red error state when the Windows service wasn't reachable. It now shows an amber "Browser Shield Active" card with extension-only stats and a prompt to try the full suite — no alarming UI, just accurate information.
+        </li>
+      </ul>
+    </div>
+
+    <!-- What's Included -->
+    <div class="change-group">
+      <div class="change-group-label">
+        <div class="group-dot extension"></div>
+        <span class="label-extension">Browser Shield — What's Included</span>
+      </div>
+      <ul class="change-list">
+        <li class="change-item extension">
+          <strong>Tracker &amp; Ad Blocking.</strong> 234+ tracker and ad domains blocked via Chrome's native declarativeNetRequest engine — no page content is read, no requests are proxied through our servers.
+        </li>
+        <li class="change-item extension">
+          <strong>Fingerprint Protection.</strong> Canvas, WebGL, audio channel, navigator, and screen APIs all return plausible noise instead of your real device signature. Prevents cross-site tracking that survives cookie clearing.
+        </li>
+        <li class="change-item extension">
+          <strong>Phishing &amp; Scam Detection.</strong> Live URLhaus and OpenPhish feed checks on every navigation. Detects ClickFix clipboard injection, tech-support scam overlays, fake update prompts, and scareware audio in real time.
+        </li>
+        <li class="change-item extension">
+          <strong>Email Shield.</strong> Blocks tracking pixels and cleans redirect wrappers silently in Gmail, Outlook, Yahoo, AOL, iCloud, Proton Mail, and Tuta. Email content never leaves your browser.
+        </li>
+        <li class="change-item extension">
+          <strong>Dark Pattern Detection.</strong> Flags urgency language, pre-checked consent boxes, and confirm-shaming on any page. Clicking the badge now opens a detail panel listing exactly what was found, the pattern type, and a Locate button that flashes the element on screen.
+        </li>
+        <li class="change-item extension">
+          <strong>Cookie Consent Auto-Reject.</strong> Silently clicks reject on consent banners across the vast majority of sites — timed retries handle lazy-loaded and delayed popups.
+        </li>
+        <li class="change-item extension">
+          <strong>Terms &amp; Privacy Grading.</strong> Automatic pattern-based grade on any ToS or Privacy Policy page you visit. Optional AI plain-English explanations via a provider of your choice — Groq, Gemini, Ollama, LM Studio, or any OpenAI-compatible local model. Your API key stays in your browser only.
+        </li>
+        <li class="change-item extension">
+          <strong>Tracking Link Stripper.</strong> Removes utm_*, fbclid, gclid, and 30+ other tracking parameters from every link you follow.
+        </li>
+        <li class="change-item extension">
+          <strong>WebRTC Leak Protection, HTTPS Upgrade, Download Monitoring.</strong> Local IP exposure blocked at the browser level. Sub-resources and frames forced to HTTPS. Dangerous file types flagged before they open.
+        </li>
+      </ul>
+    </div>
+
+    <!-- Bug Fixes -->
+    <div class="change-group">
+      <div class="change-group-label">
+        <div class="group-dot fix"></div>
+        <span class="label-fix">Bug Fixes</span>
+      </div>
+      <ul class="change-list">
+        <li class="change-item fix">
+          <strong>Dark pattern pill click did nothing visible.</strong> Clicking the badge previously scrolled to the first flagged element silently — if it was already in view, nothing appeared to happen. The pill now expands inline to show each detection with its type, description, and a Locate button.
+        </li>
+        <li class="change-item fix">
+          <strong>Extension version was hardcoded in content scripts.</strong> The version shown in phishing warning overlays was a static string that would have stayed at 1.1.9 forever. Now reads from the manifest at runtime.
+        </li>
+        <li class="change-item fix">
+          <strong>Consent rejection timer cleanup was never running.</strong> The <code>_cleanup()</code> function was defined after the timers it was supposed to clear, and <code>_clicked</code> was always false at the point of check. Hoisted declarations and wired each timer to call cleanup on success.
+        </li>
+        <li class="change-item fix">
+          <strong>Page scroll lock not restored after dismissing a phishing warning.</strong> <code>document.documentElement.style.overflow</code> was reset in a dead <code>remove</code> event listener Chrome never fires. Moved into the proceed button's callback where it actually runs.
+        </li>
+      </ul>
+    </div>
+  </div>
+
   <!-- ── v1.2.0 ── -->
   <div class="release">
     <div class="release-header">
@@ -201,7 +297,7 @@ footer{
         <div class="release-version">v1.2.0</div>
         <div class="release-meta">
           <div class="release-date">July 17, 2026</div>
-          <div class="release-badge latest">Latest Release</div>
+          <div class="release-badge">Release</div>
         </div>
       </div>
       <a href="https://github.com/contactinfinitysolutionsllc-ops/infinityguard-releases/releases/download/v1.2.0/InfinityGuard_Setup_1.2.0.exe" class="release-dl">⬇ Download</a>
