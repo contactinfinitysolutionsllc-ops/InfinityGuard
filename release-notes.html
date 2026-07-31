@@ -290,17 +290,32 @@ footer{
     </div>
   </div>
 
-  <!-- ── v1.2.1 ── -->
+  <!-- ── v1.2.2 ── -->
   <div class="release">
     <div class="release-header">
       <div>
-        <div class="release-version">v1.2.1</div>
+        <div class="release-version">v1.2.2</div>
         <div class="release-meta">
           <div class="release-date">July 31, 2026</div>
           <div class="release-badge latest">Latest · Windows App</div>
         </div>
       </div>
-      <a href="https://github.com/contactinfinitysolutionsllc-ops/infinityguard-releases/releases/download/v1.2.1/InfinityGuard_Setup_1.2.1.exe" class="release-dl">⬇ Download</a>
+      <a href="https://github.com/contactinfinitysolutionsllc-ops/infinityguard-releases/releases/download/v1.2.2/InfinityGuard_Setup_1.2.2.exe" class="release-dl">⬇ Download</a>
+    </div>
+
+    <!-- Important fix -->
+    <div class="change-group">
+      <div class="change-group-label">
+        <div class="group-dot fix"></div>
+        <span class="label-fix">Important Fix</span>
+      </div>
+      <ul class="change-list">
+        <li class="change-item fix">
+          <strong>A threat-feed entry could block InfinityGuard's own updates.</strong>
+          A malware feed (URLhaus) flagged a single malicious file hosted on GitHub's release-download host, and IG was blocking the <em>entire</em> host — which serves every GitHub download, including IG's own installer and updates. That host, and all of <code>githubusercontent.com</code>, is now permanently allow-listed. Shared-hosting domains are no longer blocked wholesale; the file scanner still catches any actual malicious download.
+          <span class="note">Known issue in 1.2.0–1.2.1, fixed in 1.2.2.</span>
+        </li>
+      </ul>
     </div>
 
     <!-- Fewer False Alarms -->
