@@ -290,6 +290,86 @@ footer{
     </div>
   </div>
 
+  <!-- ── v1.2.1 ── -->
+  <div class="release">
+    <div class="release-header">
+      <div>
+        <div class="release-version">v1.2.1</div>
+        <div class="release-meta">
+          <div class="release-date">July 31, 2026</div>
+          <div class="release-badge latest">Latest · Windows App</div>
+        </div>
+      </div>
+      <a href="https://github.com/contactinfinitysolutionsllc-ops/infinityguard-releases/releases/download/v1.2.1/InfinityGuard_Setup_1.2.1.exe" class="release-dl">⬇ Download</a>
+    </div>
+
+    <!-- Fewer False Alarms -->
+    <div class="change-group">
+      <div class="change-group-label">
+        <div class="group-dot security"></div>
+        <span class="label-security">Fewer False Alarms</span>
+      </div>
+      <ul class="change-list">
+        <li class="change-item security">
+          <strong>DNS alerts no longer flood the threat log.</strong>
+          Busy shopping, CDN, and SaaS domains generate bursts of DNS lookups that can look like tunnelling. Those heuristic hits now collapse into a single quiet <em>Network watch</em> list instead of one alert per subdomain. Only domains confirmed against a threat feed surface as real alerts.
+        </li>
+        <li class="change-item security">
+          <strong>Behavioral anomalies now require corroboration before they surface.</strong>
+          A behavioral score on its own no longer raises a card. IG confirms with a scan first, and only shows a detection when something is actually found. Unconfirmed deviations are logged quietly and used to keep learning — no more phantom "anomaly" cards.
+        </li>
+        <li class="change-item security">
+          <strong>IG no longer flags its own components.</strong>
+          A path-matching bug let the behavioral scanner occasionally flag InfinityGuard's own service as suspicious. IG now correctly recognises its own files and never scans, quarantines, or acts on them.
+        </li>
+      </ul>
+    </div>
+
+    <!-- Fixes & Safety -->
+    <div class="change-group">
+      <div class="change-group-label">
+        <div class="group-dot security"></div>
+        <span class="label-security">Fixes &amp; Safety</span>
+      </div>
+      <ul class="change-list">
+        <li class="change-item security">
+          <strong>Game anti-cheat processes are now correctly skipped.</strong>
+          A path-matching bug could let memory scanning touch anti-cheat components (Vanguard, BattlEye, EasyAntiCheat). IG now reliably skips them, removing any risk of an anti-cheat false trigger.
+        </li>
+        <li class="change-item security">
+          <strong>Suppressed-Detections manager.</strong>
+          The Quarantine page now lists every false-positive rule IG has learned — what it hides and how many detections it has suppressed — with one-click "re-arm" to start seeing a detection again.
+        </li>
+        <li class="change-item security">
+          <strong>One-click release for contained processes.</strong>
+          If a ransomware response freezes a process that turns out to be safe, you can now release it (or restore network isolation) directly from the Threat Log instead of using Task Manager.
+        </li>
+        <li class="change-item security">
+          <strong>Protected-file and protected-process guards unified.</strong>
+          IG will never quarantine or terminate a Windows system file, an anti-cheat process, or its own components — enforced in one place so no detection path can bypass it.
+        </li>
+      </ul>
+    </div>
+
+    <!-- Updates & Reliability -->
+    <div class="change-group">
+      <div class="change-group-label">
+        <div class="group-dot security"></div>
+        <span class="label-security">Updates &amp; Reliability</span>
+      </div>
+      <ul class="change-list">
+        <li class="change-item security">
+          <strong>Verified self-updates.</strong>
+          App updates are now integrity-checked (SHA-256) and pinned to the official release source before the installer is allowed to run.
+        </li>
+        <li class="change-item security">
+          <strong>Reliable engine updates.</strong>
+          ClamAV engine updates verify their download source, and the post-update restart is now synchronous so a scanning-engine update can never leave the service stopped.
+        </li>
+      </ul>
+    </div>
+  </div>
+
   <!-- ── v1.2.0 ── -->
   <div class="release">
     <div class="release-header">
