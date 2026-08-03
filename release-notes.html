@@ -290,6 +290,56 @@ footer{
     </div>
   </div>
 
+  <!-- ── v1.2.3 ── -->
+  <div class="release">
+    <div class="release-header">
+      <div>
+        <div class="release-version">v1.2.3</div>
+        <div class="release-meta">
+          <div class="release-date">August 2, 2026</div>
+          <div class="release-badge latest">Latest · Windows App</div>
+        </div>
+      </div>
+      <a href="https://github.com/contactinfinitysolutionsllc-ops/infinityguard-releases/releases/download/v1.2.3/InfinityGuard_Setup_1.2.3.exe" class="release-dl">⬇ Download</a>
+    </div>
+
+    <!-- Important fix: mic/camera -->
+    <div class="change-group">
+      <div class="change-group-label">
+        <div class="group-dot fix"></div>
+        <span class="label-fix">Important Fix</span>
+      </div>
+      <ul class="change-list">
+        <li class="change-item fix">
+          <strong>Fixed a bug that could block your microphone and camera.</strong>
+          A privacy-hardening policy could disable mic and camera access at the Windows level — breaking voice chat and video calls in games, Discord, Zoom, and Teams — and it reapplied itself, so turning it back on in Windows Settings didn't stick. Mic and camera access is now yours to control by default. Your protection here comes from Privacy Sentinel, which watches for anything accessing the mic or camera and alerts you. Applies automatically on update.
+        </li>
+      </ul>
+    </div>
+
+    <!-- Hardening -->
+    <div class="change-group">
+      <div class="change-group-label">
+        <div class="group-dot security"></div>
+        <span class="label-security">Hardening</span>
+      </div>
+      <ul class="change-list">
+        <li class="change-item security">
+          <strong>Stronger quarantine encryption.</strong>
+          The quarantine vault's encryption key is now protected by Windows DPAPI instead of being stored on disk in plaintext. Existing quarantines migrate automatically and stay restorable.
+        </li>
+        <li class="change-item security">
+          <strong>Safer automatic response.</strong>
+          Fixed a case where IG's fileless-threat response could terminate a protected system process or one you'd marked safe — including a guard against ever killing its own components or a game's anti-cheat.
+        </li>
+        <li class="change-item fix">
+          <strong>More reliable updates.</strong>
+          Corrected an internal version mismatch that could repeatedly prompt you to "update" to a version you already had. From this release on, updating from any older version jumps straight to the newest in one step.
+        </li>
+      </ul>
+    </div>
+  </div>
+
   <!-- ── v1.2.2 ── -->
   <div class="release">
     <div class="release-header">
@@ -297,7 +347,7 @@ footer{
         <div class="release-version">v1.2.2</div>
         <div class="release-meta">
           <div class="release-date">July 31, 2026</div>
-          <div class="release-badge latest">Latest · Windows App</div>
+          <div class="release-badge">Windows App</div>
         </div>
       </div>
       <a href="https://github.com/contactinfinitysolutionsllc-ops/infinityguard-releases/releases/download/v1.2.2/InfinityGuard_Setup_1.2.2.exe" class="release-dl">⬇ Download</a>
