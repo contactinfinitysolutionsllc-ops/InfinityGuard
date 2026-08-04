@@ -290,6 +290,52 @@ footer{
     </div>
   </div>
 
+  <!-- ── v1.2.4 ── -->
+  <div class="release">
+    <div class="release-header">
+      <div>
+        <div class="release-version">v1.2.4</div>
+        <div class="release-meta">
+          <div class="release-date">August 3, 2026</div>
+          <div class="release-badge latest">Latest · Windows App</div>
+        </div>
+      </div>
+      <a href="https://github.com/contactinfinitysolutionsllc-ops/infinityguard-releases/releases/download/v1.2.4/InfinityGuard_Setup_1.2.4.exe" class="release-dl">⬇ Download</a>
+    </div>
+
+    <!-- License reliability -->
+    <div class="change-group">
+      <div class="change-group-label">
+        <div class="group-dot fix"></div>
+        <span class="label-fix">Important Fix</span>
+      </div>
+      <ul class="change-list">
+        <li class="change-item fix">
+          <strong>License activation and plan changes now apply cleanly.</strong>
+          Activating a license, or removing one to go back to Free, now restarts the protection engines properly and shows clear on-screen progress instead of leaving you unsure anything happened. And a <em>lapsed or cancelled subscription now correctly reverts to Free</em> — previously an expired plan could keep paid features running.
+        </li>
+      </ul>
+    </div>
+
+    <!-- Detection restored -->
+    <div class="change-group">
+      <div class="change-group-label">
+        <div class="group-dot security"></div>
+        <span class="label-security">Detection</span>
+      </div>
+      <ul class="change-list">
+        <li class="change-item security">
+          <strong>A ransomware-precursor monitor is running again.</strong>
+          A behavioral watcher for early ransomware behavior — shadow-copy deletion, backup tampering, security-process termination, recovery-mode disabling — had silently stopped working. It's active and watching again.
+        </li>
+        <li class="change-item fix">
+          <strong>YARA-detected threats now quarantine correctly.</strong>
+          A bug caused threats matched by YARA rules to fail when being moved to the encrypted vault; they now quarantine as intended.
+        </li>
+      </ul>
+    </div>
+  </div>
+
   <!-- ── v1.2.3 ── -->
   <div class="release">
     <div class="release-header">
@@ -297,7 +343,7 @@ footer{
         <div class="release-version">v1.2.3</div>
         <div class="release-meta">
           <div class="release-date">August 2, 2026</div>
-          <div class="release-badge latest">Latest · Windows App</div>
+          <div class="release-badge">Windows App</div>
         </div>
       </div>
       <a href="https://github.com/contactinfinitysolutionsllc-ops/infinityguard-releases/releases/download/v1.2.3/InfinityGuard_Setup_1.2.3.exe" class="release-dl">⬇ Download</a>
