@@ -290,6 +290,74 @@ footer{
     </div>
   </div>
 
+  <!-- ── v1.2.5 ── -->
+  <div class="release">
+    <div class="release-header">
+      <div>
+        <div class="release-version">v1.2.5</div>
+        <div class="release-meta">
+          <div class="release-date">August 6, 2026</div>
+          <div class="release-badge latest">Latest · Windows App</div>
+        </div>
+      </div>
+      <a href="https://github.com/contactinfinitysolutionsllc-ops/infinityguard-releases/releases/download/v1.2.5/InfinityGuard_Setup_1.2.5.exe" class="release-dl">⬇ Download</a>
+    </div>
+
+    <!-- Manual install note -->
+    <div class="change-group">
+      <div class="change-group-label">
+        <div class="group-dot fix"></div>
+        <span class="label-fix">Please Read</span>
+      </div>
+      <ul class="change-list">
+        <li class="change-item fix">
+          <strong>Install this update manually.</strong>
+          Download and run the installer over your current version — your settings, license, and quarantined items are all preserved. Earlier versions couldn't apply updates automatically, so this is the last manual step. <em>From 1.2.5 onward, updates install themselves.</em>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Fewer false positives -->
+    <div class="change-group">
+      <div class="change-group-label">
+        <div class="group-dot security"></div>
+        <span class="label-security">Fewer False Positives</span>
+      </div>
+      <ul class="change-list">
+        <li class="change-item security">
+          <strong>Windows Defender now has the final say.</strong>
+          A file is only quarantined when Defender agrees it's a threat. InfinityGuard's faster heuristics check with Defender first instead of quarantining on suspicion — so legitimate installers, developer tools, and packed apps stop getting flagged, while real threats are still caught immediately.
+        </li>
+      </ul>
+    </div>
+
+    <!-- Fixes & improvements -->
+    <div class="change-group">
+      <div class="change-group-label">
+        <div class="group-dot fix"></div>
+        <span class="label-fix">Fixes &amp; Improvements</span>
+      </div>
+      <ul class="change-list">
+        <li class="change-item fix">
+          <strong>The in-app updater is fixed.</strong>
+          Clicking Update Now now opens the installer visibly and applies the update, instead of appearing to do nothing.
+        </li>
+        <li class="change-item security">
+          <strong>Stronger detection.</strong>
+          Expanded community virus signatures are restored, improving detection of known malware — bundled with a false-positive whitelist so the added coverage doesn't add noise.
+        </li>
+        <li class="change-item fix">
+          <strong>Your quarantine now survives updates — safely.</strong>
+          The encrypted vault and its records are durable across restarts and updates: quarantined items are never lost or stranded, false-positive files stay restorable, and InfinityGuard cleans up its own leftover files so it never wastes your disk space.
+        </li>
+        <li class="change-item fix">
+          <strong>Quieter and smarter.</strong>
+          Routine driver updates no longer trigger a wall of "system file missing" notices, and a heavy-workload system-load spike can no longer cause a running app to be wrongly quarantined.
+        </li>
+      </ul>
+    </div>
+  </div>
+
   <!-- ── v1.2.4 ── -->
   <div class="release">
     <div class="release-header">
@@ -297,7 +365,7 @@ footer{
         <div class="release-version">v1.2.4</div>
         <div class="release-meta">
           <div class="release-date">August 3, 2026</div>
-          <div class="release-badge latest">Latest · Windows App</div>
+          <div class="release-badge">Windows App</div>
         </div>
       </div>
       <a href="https://github.com/contactinfinitysolutionsllc-ops/infinityguard-releases/releases/download/v1.2.4/InfinityGuard_Setup_1.2.4.exe" class="release-dl">⬇ Download</a>
